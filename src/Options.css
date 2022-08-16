@@ -1,0 +1,11 @@
+.Option_main {
+  margin: 5px auto;
+  border-radius: 5px;
+  text-align: center;
+  padding: 15px;
+  min-width: 300px;
+}
+.Option_main:focus {
+    padding: 30px 15px;
+   
+}

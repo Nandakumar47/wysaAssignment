@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Survey from "./Survey";
+import "./App.css";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="inner_div">
+        {count !== 0 && (
+          <button
+            id="prev"
+            onClick={() => {
+              if (count > 0) {
+                setCount(count - 1);
+              }
+            }}
+          >
+            Prev
+          </button>
+        )}
+        {count !== 2 && (
+          <button
+            id="next"
+            onClick={() => {
+              if (count < 2) {
+                setCount(count + 1);
+              }
+            }}
+          >
+            Next
+          </button>
+        )}
+      </div>
+      <Survey Count={count} />
     </div>
   );
 }
